@@ -1,0 +1,39 @@
+{% include 'head.html' %}
+
+<body>
+	{% include 'header.html' %}
+	<div class="content">
+		<h1 class="text-center">Supprimer une recette : <h1>
+
+	
+<form action="" method="POST">
+
+    <div class="input-group flex-nowrap">
+        
+        <div class="input-group">
+            <input name="title" type="text" class="form-control" placeholder="Quelles recettes voulez-vous supprimer ?" aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
+            <div class="input-group-append" id="button-addon4">
+              <button class="btn btn-secondary" action="submit" type="submit button">Supprimer</button>
+            
+            </div>
+          </div>
+        
+    
+      </div>
+
+      <div class="custom-control custom-checkbox ">
+        <input required type="checkbox" class="custom-control-input" id="customCheck1">
+        <label required class="custom-control-label del-check " for="customCheck1">Je confirme vouloir supprimer cette recette</label>
+      </div>
+
+
+</form>
+
+
+
+</div>
+
+</body>
+{% include 'footer.html' %}
+
+</html>

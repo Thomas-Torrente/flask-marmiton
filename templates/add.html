@@ -1,0 +1,118 @@
+{% include 'head.html' %}
+
+<body>
+	{% include 'header.html' %}
+	<div class="d-flex justify-content-center">
+		<h1>Ajouter une recette <h1>
+
+	</div>
+  <div class="content">
+
+    <form method="POST" class="was-validated" action="http://127.0.0.1:5000/ajouter">
+        <div class="mb-3">
+          <label for="validationTextarea" class="is-required">Titre de la recette<span class="sr-only"> (required)</span></label>
+          <input name="title" class="form-control is-invalid" id="validationTextarea" aria-describedby="validationTextareaFeedback" placeholder="Titre de votre recette" required></input>
+          <div class="invalid-feedback" id="validationTextareaFeedback">
+            Merci de mettre un titre à votre recette
+          </div>
+        </div>
+        <br>
+
+        <div class="mb-3">
+            <label for="validationTextarea" class="is-required">Ingrédients<span class="sr-only"> (required)</span></label>
+            <textarea name="ingredients" class="form-control is-invalid" id="validationTextarea" aria-describedby="validationTextareaFeedback" placeholder="Titre de votre recette" required></textarea>
+            <div class="invalid-feedback" id="validationTextareaFeedback">
+              Merci de mettre les ingrédients de votre recettes
+            </div>
+          </div>
+      
+          <br>
+          <div class="mb-3">
+            <label for="validationTextarea" class="is-required">Recette<span class="sr-only"> (required)</span></label>
+            <textarea name="content" class="form-control is-invalid" id="validationTextarea" aria-describedby="validationTextareaFeedback" placeholder="Titre de votre recette" required></textarea>
+            <div class="invalid-feedback" id="validationTextareaFeedback">
+              Merci de vouloir écrire votre recette
+            </div>
+          </div>
+
+          <br>
+          <div class="mb-3">
+            <label for="validationTextarea" class="is-required">Temps<span class="sr-only"> (required)</span></label>
+            <input name="time" type="text" class="form-control is-invalid" id="validationTextarea" aria-describedby="validationTextareaFeedback" placeholder="Temps" required></input>
+            <div class="invalid-feedback" id="validationTextareaFeedback">
+              Merci de bien vouloir indiquer un temps
+            </div>
+          </div>
+          <br>
+
+          <div class="custom-file mb-3">
+            <input name="image" type="file" class="custom-file-input" id="validatedCustomFile" aria-describedby="customFileValidationFeedback" required>
+            <label class="custom-file-label" for="validatedCustomFile">add image<span class="sr-only"> (required)</span></label>
+            <div class="invalid-feedback" id="customFileValidationFeedback">
+            Merci de bien vouloir ajouter une image
+            </div>
+          </div>
+<br>
+<div class="mb-3">
+  <label for="customSelectValidation">Type de recette<span class="sr-only"> (required)</span></label>
+  <select name="type" class="custom-select" id="customSelectValidation" aria-describedby="customSelectValidationFeedback" required>
+    <option value="None">Choose...</option>
+    <option value="Apéritif">Apéritif</option>
+    <option value="entrée">entrée</option>
+    <option value="plat">plat</option>
+    <option value="dessert">dessert</option>
+  </select>
+  <div class="invalid-feedback" id="customSelectValidationFeedback">
+   Sélection invalide
+  </div>
+</div>
+
+<br>
+          <div class="mb-3">
+    <label for="customSelectValidation">custom difficulty<span class="sr-only"> (required)</span></label>
+    <select name="difficulty" class="custom-select" id="customSelectValidation" aria-describedby="customSelectValidationFeedback" required>
+      <option value="None">Choose...</option>
+      <option value="Facile">Facile</option>
+      <option value="Moyen">Moyen</option>
+      <option value="Difficile">Difficile</option>
+    </select>
+    <div class="invalid-feedback" id="customSelectValidationFeedback">
+     Sélection invalide
+    </div>
+  </div>
+
+  <br>
+
+  <div class="mb-3">
+    <label for="validationTextarea" class="is-required">Personnes :<span class="sr-only"> (required)</span></label>
+    <input name="persons" type="text" class="form-control is-invalid" id="validationTextarea" aria-describedby="validationTextareaFeedback" placeholder="Temps" required></input>
+    <div class="invalid-feedback" id="validationTextareaFeedback">
+      Merci de bien vouloir indiquer pour combien de personne
+    </div>
+  </div>
+  <br>
+
+
+        <div class="custom-control custom-checkbox mb-3">
+            <input type="checkbox" class="custom-control-input" id="customControlValidation1" aria-describedby="customControlValidation1Feedback" required>
+            <label class="custom-control-label" for="customControlValidation1">J'accepte que ma recette soit publié sur le site internet<span class="sr-only"> (required)</span></label>
+            <div class="invalid-feedback" id="customControlValidation1Feedback">
+
+            </div>
+          </div>
+      
+    
+      
+          <button type="submit" class="btn btn-primary">
+            <span class="icon icon-settings" aria-hidden="true"></span>
+            Envoyer ma recette
+          </button>
+   
+      </form>
+    </div>
+
+
+</body>
+{% include 'footer.html' %}
+
+</html>

@@ -1,0 +1,28 @@
+{% include 'head.html' %}
+
+<body>
+	{% include 'header.html' %}
+	<div class="content">
+		<h1 class="text-center">Voici tout nos plats :<h1>
+
+	
+
+
+
+<div class="d-flex flex-wrap">
+	{% for affichePlat in resultPlat %}
+	<div class="card" style="width: 18rem;">
+		<a href="http://127.0.0.1:5000/recette/{{affichePlat["title"]}}">
+		<img src="{{affichePlat["image"]}}" class="card-img-top" alt="{{affichePlat["title"]}}"
+		<div class="card-body">
+		  <p class="card-text text-center">{{affichePlat["title"]}}</p>
+		</a>
+		</div>
+		{% endfor %}
+	  </div>
+
+</div>
+
+</body>
+{% include 'footer.html' %}
+</html>

@@ -1,0 +1,67 @@
+{% include 'head.html' %}
+
+<body>
+
+	{% include 'header.html' %}
+	<div class="content">
+                
+        {% for oneRecette in resultOneRecette %}
+        <div class="one-recette">
+     <h1 class="text-center">{{oneRecette["title"]}}</h1>
+
+
+                <img  src="{{oneRecette["image"]}}" />
+                <div class="container1 flex-row">
+                        
+                <div class="box-left1 text-center">
+<p>Temps de préparation : {{oneRecette["time"]}}</p>
+<p>Difficulté : {{oneRecette["difficulty"]}}</p>
+<p>Pour {{oneRecette["persons"]}} personnes</p>
+                </div>
+
+                <div class="box-right1 text-center">
+<p>Reccomandé pour : {{oneRecette["type"]}}</p>
+                </div>
+                
+
+                
+                </div>
+
+                <h4>Ingrédients pour la réalisation de cette recette : </h4>
+                <p>{{oneRecette["ingredients"]}}</p>
+<br>
+                <h4>Réalisation de la recette : </h4>
+                <p>{{oneRecette["content"]}}</p>
+                <br>
+                <br>
+                <br>
+
+<h5>Commentaire sur cette recette : </h5>
+<input placeholder="Ecrire un commentaire ..." /> 
+<div class="commentary">
+        <p>Michel4232 a écrit : </p>
+        <p class="">{{oneRecette["comment"]}}</p></div>
+
+
+
+
+
+
+
+                
+
+</div>
+</div>
+        {%endfor%}
+	
+        
+	
+
+
+
+
+
+</body>
+{% include 'footer.html' %}
+
+</html>

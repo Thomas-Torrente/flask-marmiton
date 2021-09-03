@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		 <link rel="stylesheet" type="text/css" href="static/css/boosted.css" media="screen, projection" />
+		 <link rel="stylesheet" type="text/css" href="static/css/orange-news.css" media="screen, projection" />
+		 <link href="static/css/orangeHelvetica.css" rel="stylesheet">
+		 <link href="/static//css/my-css.css" rel="stylesheet">
+		 <link href="static/css/orangeIcons.css" rel="stylesheet">
+		 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boosted@4.5.2/dist/css/boosted.min.css" integrity="sha384-j8BgukP8/Cao3CDMrwvCOSDGFQr7Yr3LGW9PUWByAoJuSwmgppSVBjC8rOSubbeC" crossorigin="anonymous">
+
+		 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		 <script src="static/js/vendor/popper.min.js"></script>
+		 <script src="static/js/boosted.js"></script>
+		<style>
+		body {
+			margin : 0;
+			padding : 0;
+			font-family : arial ;
+		}
+		
+		
+	
+	label
+{
+	width: 150px; /* Cette largeur sert d’exemple, vous pouvez la modifier si vous voulez. */
+}
+		
+		.titre {
+			font-size : 24px ;
+		}
+		
+		.contenu {
+			padding : 20px ;
+		}
+		
+		.pub_time {
+			text-align : right ;
+			color : #AAA;
+			font-size :  11px ;
+		}
+		
+		.content {
+			 width : 1024px ; 
+			 margin : auto ;
+			 border : 1px solid #CCC;
+			 padding : 10px;
+			
+		}
+		
+		article {
+			box-shadow : 0 0 3px #aaa;
+			}
+		
+	
+		
+		input, textarea {
+			margin : 10px 0 ;
+			padding: 5px;
+			border : 1px solid #aaa;
+			border-radius : 5px;
+			width : 60%;
+		}
+		
+		
+		.message {
+			margin :  10px;
+			border-radius : 5px;
+			box-shadow : 1px 1px 2px #AAA;
+			padding: 15px;
+			background : #35b15c;
+		}
+		
+		.errmessage {
+			margin :  10px;
+			border-radius : 5px;
+			box-shadow : 1px 1px 2px #AAA;
+			padding: 15px;
+			background : #ff0000;
+		}
+		
+		article {
+			position : relative;
+		}
+		
+		.buttonsListe {
+			position : absolute;
+			top : 5px; 
+			right : 15px;
+		}
+		
+		.modify_button {
+			
+		}
+		
+		article   {
+			display : none;
+		}
+		
+		.outline   {
+			display : none;
+		}
+
+		.editable  {
+			display : block;
+		}
+		
+		.editable .articleContent {
+			display : none;
+		}
+		
+		.sitePreview {
+			width : 210px;
+			height : 230px;
+			float : left ;
+			margin : 15px;
+			box-shadow : 1px 1px 2px #aaa;
+			padding : 0;
+		}
+		
+		
+		.sitePreview iframe {
+			width : 700px;
+			height : 700px;
+			float : left ;
+			margin : 0px;
+			border : 0 none;
+			-ms-zoom: 0.30;
+			-moz-transform: scale(0.30);
+			-moz-transform-origin: 0 0;
+			-o-transform: scale(0.30);
+			-o-transform-origin: 0 0;
+			-webkit-transform: scale(0.30);
+			-webkit-transform-origin: 0 0;
+		}
+		
+		</style>
+		<script>
+			function switchEdit ( self ) {
+				article = self.parentNode.parentNode;
+				if ( article.className!="" ) {
+					article.className ="" ;
+				}
+				else {
+					article.className ="editable";
+				}
+			}
+		</script>
+		
+	</head>

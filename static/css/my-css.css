@@ -1,0 +1,74 @@
+/* ALL RECETTES */
+
+.card {
+  width: 500px;
+  height: 220px;
+  border: none;
+  padding: 10px;
+  background-color: #ff6404 !important;
+  border-radius: 10px;
+}
+
+.card-text {
+  font-size: 15px !important;
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.card p {
+  padding: 5%;
+  color: #ff6404 !important;
+  background-color: white;
+  margin: 10px;
+  border-radius: 75px;
+}
+
+/* ONE RECETTE */
+
+.one-recette img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.container1 {
+  width: auto;
+  height: 200px;
+  padding-top: 25px;
+}
+.box-left1 {
+  width: 50%;
+  position: left;
+  /* border: 1px solid red; */
+}
+
+.box-right1 {
+  width: 50%;
+  position: right;
+  /* border: 1px solid green; */
+}
+
+.commentary {
+  border-top: 1px solid #ff6404;
+  padding: 5px;
+  border-bottom: 1px solid #ff6404;
+
+  margin-top: 50px;
+}
+
+/* delete */
+
+.del-check {
+  font-size: 20px;
+}
+
+/* GENERAL */
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}

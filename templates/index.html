@@ -1,0 +1,31 @@
+{% include 'head.html' %}
+
+<body>
+	{% include 'header.html' %}
+	<div class="content">
+		<h1 class="text-center">Bienvenue sur Marmitton<h1>
+			<h2 class="text-center">Voici toutes nos recettes :</h2>
+
+	
+
+	<!-- {% for recette in result %}
+	<p>{{recette["title"]}}</p>
+	<img src="{{recette["image"]}}">
+	{% endfor %} -->
+	<div class="d-flex flex-wrap justify-content-center">
+	{% for recette in result %}
+	<div class="card" style="width: 18rem;">
+		<a href="http://127.0.0.1:5000/recette/{{recette["title"]}}">
+		<img src="{{recette["image"]}}" class="card-img-top" alt="{{recette["title"]}}"
+		<div class="card-body">
+		  <p class="card-text text-center">{{recette["title"]}}</p>
+		</a>
+		</div>
+		{% endfor %}
+	  </div>
+	</div>
+</div>
+
+</body>
+{% include 'footer.html' %}
+</html>

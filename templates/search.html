@@ -1,0 +1,43 @@
+{% include 'head.html' %}
+
+<body>
+	{% include 'header.html' %}
+	<div class="content">
+			<h2 class="text-center">Résultat de la recherche :</h2>
+
+            <form method="POST" action="">
+                <div class="input-group flex-nowrap">
+        
+                    <div class="input-group">
+                        <input name="ingredients" type="text" class="form-control" placeholder="Quels recette recherchez vous ?" aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
+                        <div class="input-group-append" id="button-addon4">
+                          <button class="btn btn-secondary" action="submit" type="submit button">rechercher</button>
+                          <button class="btn btn-secondary" type="reset button">Rénitialiser</button>
+                        </div>
+                      </div>
+           
+                
+                  </div>
+                </form>
+
+            
+
+                <div class="d-flex flex-wrap justify-content-center">
+                    {% for findRecette in searchRecette %}
+                    <div class="card" style="width: 18rem;">
+                        <a href="http://127.0.0.1:5000/recette/{{findRecette["title"]}}">
+                        <img src="{{findRecette["image"]}}" class="card-img-top" alt="{{findRecette["title"]}}"
+                        <div class="card-body">
+                          <p class="card-text text-center"> {{findRecette["title"]}}</p>
+                        </a>
+                        </div>
+                        {% endfor %}
+                      </div>
+	
+
+
+</div>
+
+</body>
+{% include 'footer.html' %}
+</html>
