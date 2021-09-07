@@ -27,6 +27,14 @@
   border-radius: 75px;
 }
 
+/* carroussel */
+
+.img-caroussel {
+  object-fit: cover;
+  width: 100%;
+  height: 400px;
+}
+
 /* ONE RECETTE */
 
 .one-recette img {
@@ -71,4 +79,8 @@
 .flex-row {
   display: flex;
   flex-direction: row;
+}
+
+.padding-30-top {
+  padding-top: 30px;
 }

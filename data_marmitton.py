@@ -4,21 +4,24 @@ import sqlite3
 os.chdir("C:/Users/thoma/OneDrive/Bureau/Python/BlaBlacode/Flask/marmiton/2.0")
 
 DATA_URL = "data/marmitonDB.sqlite"
+# la ou se trouve la BDD
 
 conn = sqlite3.connect(DATA_URL)
+# connexion a la BDD
 conn.row_factory = sqlite3.Row
 
 cursor = conn.cursor()
 
-try:
-    sql = """ CREATE TABLE IF NOT EXISTS recipe ( title text, ingredients text, content text, comment text, time text, type text, difficulty text, persons number  ) """
-    cursor.execute(sql)
+# try:
+#     sql = """ CREATE TABLE IF NOT EXISTS recipe ( title text, ingredients text, content text, comment text, time text, type text, difficulty text, persons number  ) """
+#     # Si la table "recipe" n'existe pas alors la créer
+#     cursor.execute(sql)
 
-    conn.commit()
+#     conn.commit()
 
-finally:
-    print('table check ends')
-    conn.close()
+# finally:
+#     print('table check ends')
+#     conn.close()
 
 
 def allAfficher():
@@ -29,18 +32,21 @@ def allAfficher():
     conn.row_factory = sqlite3.Row
     cursor = conn.cursor()
     cursor.execute("SELECT * from recipe")
+    # on selectionne tous ce qu'il y a dans recipe
 
     for i in cursor:
         ma_recette = {}
+        # on fais un dictionnary
         ma_recette["title"] = i["title"]
         ma_recette["image"] = i["image"]
+        # et on stoque dedans a chaque tour de boucle le titre et l'image de chaque ligne
         R.append(ma_recette)
     return R
     # OUBLIE PAS LE RETURNNN !!!!
 
 
 def oneAfficher(title):
-    """Permets d'afficher tous les élèmes contenues des recettes : title text, ingredients text, content text, comment text, time text, image text, persons number, type text, difficulty text"""
+    """Permets d'afficher tous les élèments contenues des recettes : title text, ingredients text, content text, comment text, time text, image text, persons number, type text, difficulty text"""
     O = []
     conn = sqlite3.connect(DATA_URL)
     conn.row_factory = sqlite3.Row
@@ -65,14 +71,17 @@ def oneAfficher(title):
 
 
 def ajouterRecette(title, ingredients, content, time, image, type, difficulty, persons):
+    # en passe en parametre tout ce qu'il faut pour créer une recette
     conn = sqlite3.connect(DATA_URL)
     conn.row_factory = sqlite3.Row
     cursor = conn.cursor()
     chemin = "../static/images/" + image
+    # on fait une variable on on stoque le chemin d'acces de l'image et l'image
 
     try:
         cursor.execute("INSERT INTO recipe VALUES ( ? ,  ? , ? , ? , ? , ? , ? , ? , ? , ? )",
                        (title, ingredients, content, "Incroyable", time, chemin, 0, type, difficulty, persons,))
+        #    on insert les values vides pour l'instant sauf pour le commentaire qui est "incroyable"
         conn.commit()
 
     finally:
@@ -82,11 +91,14 @@ def ajouterRecette(title, ingredients, content, time, image, type, difficulty, p
 
 
 def rechercherRecette(ingredients):
+    # on met en parametre ingredients
     I = []
     conn = sqlite3.connect(DATA_URL)
     conn.row_factory = sqlite3.Row
     cursor = conn.cursor()
     regexp = "%" + ingredients + "%"
+    #  on créer la variable regexp et contiens ???? et ingredients
+
     cursor.execute("SELECT * from recipe WHERE ingredients like ?", (regexp,))
 
     for b in cursor:
